@@ -20,19 +20,10 @@ class DeviceTools:
         }
 
     @classmethod
-    def device_connection(cls, device_data: dict) -> dict:
+    def device_connection(cls, device_data: dict):
         try:
-            device_network_connection = ConnectHandler(**device_data)
-            if device_network_connection:
-                return {
-                    "device_connection": "Established",
-                    "connection": True
-                }
-            else:
-                return {
-                    "device_connection": "Non-established",
-                    "connection": False
-                }
+            return ConnectHandler(**device_data)
+
         except Exception as error:
             return {
                 "device_connection": "Error",
