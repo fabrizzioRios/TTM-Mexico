@@ -23,7 +23,6 @@ class DeviceTools:
     def device_connection(cls, device_data: dict):
         try:
             return ConnectHandler(**device_data)
-
         except Exception as error:
             return {
                 "device_connection": "Error",

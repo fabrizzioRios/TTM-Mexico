@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a04b3b8-7b93-46d0-82ee-0f9e0d5c7fc3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../iCard-FrontEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../iCard-FrontEnd/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6a04b3b8-7b93-46d0-82ee-0f9e0d5c7fc3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +155,7 @@
       <workItem from="1710739267210" duration="1007000" />
       <workItem from="1710809027362" duration="306000" />
       <workItem from="1710915727796" duration="2122000" />
-      <workItem from="1710979554569" duration="10662000" />
+      <workItem from="1710979554569" duration="11533000" />
     </task>
     <servers />
   </component>
