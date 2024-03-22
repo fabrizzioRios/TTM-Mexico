@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f242b15-9487-4c15-a8db-5fba82b420e2" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2dFJfiu6uVODY9BPZlAvxpeup6a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.TableRouters.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/wuich/OneDrive/Escritorio/TTM_Mexicowebsite/iCard-FrontEnd",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\WebStorm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\SendCommandForm" />
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Users\TableUsers" />
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Switches" />
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Switches\TableSwitches" />
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Routers\TableRouters" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Switches" />
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\pages\Admin" />
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\pages\Admin\Switches" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f242b15-9487-4c15-a8db-5fba82b420e2" name="Changes" comment="" />
+      <created>1709598000353</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709598000353</updated>
+      <workItem from="1709598001993" duration="6275000" />
+      <workItem from="1709826227941" duration="80061000" />
+      <workItem from="1710791098437" duration="1464000" />
+      <workItem from="1710808824719" duration="1774000" />
+      <workItem from="1710915240295" duration="5913000" />
+      <workItem from="1710979510383" duration="6640000" />
+      <workItem from="1711119369965" duration="634000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Admin/Users/AddEditUserForm/AddEditUserForm.js</url>
+          <line>83</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
