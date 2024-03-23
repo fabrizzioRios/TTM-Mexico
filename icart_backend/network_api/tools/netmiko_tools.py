@@ -8,6 +8,7 @@ class DeviceTools:
             "device_type": request_data.device_type,
             "host": request_data.ip_address,
             "username": request_data.username,
+            "password": "test_network",
             "secret": "test_network"
         }
     @classmethod
@@ -16,6 +17,7 @@ class DeviceTools:
             "device_type": request_data.get('device_type'),
             "host": request_data.get('ip_address'),
             "username": request_data.get('username'),
+            "password": "test_network",
             "secret": "test_network"
         }
 

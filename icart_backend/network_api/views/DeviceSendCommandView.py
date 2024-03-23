@@ -12,14 +12,17 @@ class DeviceSendCommandView(APIView):
         command = request.data.get('writed_command')
         device_data = json.loads(device_data_str)
         connection_dictionary = DeviceTools.create_device_dictionary_from_request(device_data)
-        ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
-
-        if request.data.get('enable_mode') and not request.data.get('conf_mode') and not request.data.get('from_file'):
+        print(connection_dictionary)
+        if request.data.get('enable_mode'):
+            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
             return Response(DeviceTools.send_command_privilege_mode(ssh_device_connection, command))
-        if request.data.get('conf_mode') and not request.data.get('enable_mode') and not request.data.get('from_file'):
+        if request.data.get('conf_mode'):
+            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
             return Response(DeviceTools.send_command_config_mode(ssh_device_connection, command))
-        if request.data.get('from_file') and not request.data.get('enable_mode') and not request.data.get('conf_mode'):
+        if request.data.get('from_file'):
+            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
             config_file = request.FILES['file'].read().decode('utf-8')
+            print(config_file)
             return Response(DeviceTools.send_command_from_file(ssh_device_connection, config_file))
         else:
             return Response(DeviceTools.send_command_access_mode(ssh_device_connection, command))
