@@ -1,5 +1,6 @@
 
 import subprocess
+import textfsm
 
 
 class Tool:
@@ -13,3 +14,12 @@ class Tool:
                 return False
         except Exception as err:
             return False
+    
+    @classmethod
+    def filter_output(filter_path: str, stdout_output: str) -> list:
+
+        with open(filter_path) as template:
+            fsm = textfsm.TextFSM(template)
+            result = fsm.ParseText(stdout_output)
+
+        return result
