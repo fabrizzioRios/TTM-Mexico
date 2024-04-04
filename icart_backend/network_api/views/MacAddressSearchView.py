@@ -10,7 +10,7 @@ class MacAddressSearchView(APIView):
         switches = Switch.objects.all()
         dictionary_list = [DeviceTools.create_device_dictionary_from_queryset(element) for element in switches]
         ssh_device_list = [DeviceTools.device_connection(element) for element in dictionary_list]
-        mac_address_shows = [DeviceTools.send_command_access_mode(element, "sh mac address-table") for element in ssh_device_list]
+        mac_address_shows = [DeviceTools.search_mac(element, "sh mac address-table") for element in ssh_device_list]
 
         print(dictionary_list)
 

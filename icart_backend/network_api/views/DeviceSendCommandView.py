@@ -25,4 +25,5 @@ class DeviceSendCommandView(APIView):
             print(config_file)
             return Response(DeviceTools.send_command_from_file(ssh_device_connection, config_file))
         else:
+            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
             return Response(DeviceTools.send_command_access_mode(ssh_device_connection, command))

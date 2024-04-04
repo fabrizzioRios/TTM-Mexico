@@ -11,6 +11,7 @@ class DeviceTools:
             "password": "test_network",
             "secret": "test_network"
         }
+
     @classmethod
     def create_device_dictionary_from_request(cls, request_data: dict) -> dict:
         return {
@@ -92,9 +93,11 @@ class DeviceTools:
             }
 
     @classmethod
-    def send_command_config_mode(cls, device_network_connection, command: list) -> dict:
+    def send_command_config_mode(cls, device_network_connection, command) -> dict:
         try:
-            command_result = device_network_connection.send_config_set(command)
+            enable_mode = device_network_connection.enable()
+            command_result = enable_mode.send_config_set([command])
+
             device_network_connection.disconnect()
 
             if command_result:
