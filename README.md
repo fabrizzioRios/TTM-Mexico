@@ -30,41 +30,51 @@ Clonar el repositorio:
 
 Con esto ya tendrias el repositorio descargado directamente a tu computadora.
 
-## Descarga de librerias 🗂️
+## Set up del backend
 
-Despues de haber clonado el repositorio, necesitaremos descargar las librerias necesarias para el funcionamiento del proyecto.
-Con el archivo requirements.txt podemos instalar de manera rapida las librerias y dependencias utilizadas.
+Dentro del directorio deberemos de entrar al proyecto de Django. Ahi esta almacenada toda la logica de programacion y la parte del backend.
+
+`cd icart_backend`
+
+Necesitaremos descargar las librerias necesarias para el funcionamiento del proyecto. Con el archivo requirements.txt podemos instalar de manera rapida las librerias y dependencias utilizadas.
 
 El siguiente comando ayuda a instalar todo directamente en el lugar donde este almacenado el repositorio ya clonado.
 
 `pip install -r requirements.txt`
 
-## Set up del backend
+Despues se debera de correr el servidor de django mediante el siguiente comando.
 
-`cd i`
 `python manage.py runserver`
+
+Este comando iniciará el servidor de desarrollo de Django en tu máquina local. Se podra acceder a la aplicación a través de la dirección proporcionada en la consola (Tiene que ser http://127.0.0.1:8000/).
 
 
 ## Set up del frontend
 
-`cd i`
+Dentro del directorio deberemos de entrar al proyecto de ReactJX. Ahi esta almacenada toda la logica de programacion y la parte del frontend.
+
+`cd icart_backend`
+
+Ejecutamos este comando para descargar todas las dependencias de Javascript que se utilizaron en el proyecto.
+
 `npm install`
+
+Dentro se debera de correr el servidor de ReactJX mediante el siguiente comando.
+
 `npm start`
+
+Este comando iniciará el servidor de desarrollo de ReactJX en tu máquina local. Se podra acceder a la aplicación a través de la dirección proporcionada en la consola (Tiene que ser http://localhost:3000/).
+
 
 ## Uso del sitio
 
-Ambos procesos
+Ambos procesos deberan de estar corriendo de forma adecuada.
 
-`network_admin@ttm.mexico.com	`
-`TTMM3x1c0@.`
+Se debera acceder a la siguiente url http://localhost:3000/Admin
 
+Ahi se debera usar el usuario administrador para iniciar sesion y acceder a la pagina:
+
+Email: `network_admin@ttm.mexico.com`
+Contraseña: `TTMM3x1c0@.`
 
 Y listo, el proyecto debera de ser funcional y podra ser editado y configurado de manera que se adapte a la red donde se necesite ser usado.
-
-# Autores ✒️
-- Samuel Gutierrez Madrigal
-- Wilialdo Perez Oseguera
-- Luis Fabrizzio Rios Ruiz
-- Valentina Balderas Torres
-- Paulina Osuna Guzman
-- Rogelio Cuevas Salvador
