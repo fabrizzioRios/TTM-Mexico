@@ -5,6 +5,7 @@ import {Loader} from "semantic-ui-react";
 import {ModalBasic} from "../../components/Common";
 import {AddEditSwitchForm} from "../../components/Admin";
 import {SendCommandForm} from "../../components/Admin";
+import {SendCommandFromFile} from "../../components/Admin/SendCommandFromFile/SendCommandFromFile";
 
 export function Switches() {
     const { loading, switches, getSwitches, deleteSwitch } = useSwitch()
@@ -46,6 +47,15 @@ export function Switches() {
         openCloseModal()
     }
 
+    const configFromFile = (data) => {
+        setTitleModal("Send command")
+        setContentModal(<SendCommandFromFile
+            onClose={openCloseModal}
+            onRefetch={onRefetch}
+            nd_switch={data}/>)
+        openCloseModal()
+    }
+
     const onDeleteSwitch = async (data) => {
         const result = window.confirm(`Delete switch ${data.hostname}?`)
         if (result){
@@ -65,7 +75,7 @@ export function Switches() {
                     Loading...
                 </Loader>
             ):(
-                <TableSwitches switches={switches} updateSwitch={updateSwitch} onDeleteSwitch={onDeleteSwitch} sendCommand={sendCommand}/>
+                <TableSwitches switches={switches} updateSwitch={updateSwitch} onDeleteSwitch={onDeleteSwitch} sendCommand={sendCommand} configFromFile={configFromFile}/>
             )}
             <ModalBasic
                 show={showModal}

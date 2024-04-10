@@ -6,10 +6,38 @@
   <component name="ChangeListManager">
     <list default="true" id="5f242b15-9487-4c15-a8db-5fba82b420e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../icart_backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/connections.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/connections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/sites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/sites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/MacAdressSearchForm/MacAdressSearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/MacAdressSearchForm/MacAdressSearchForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Routers/AddEditRouterForm/AddEditRouterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Routers/AddEditRouterForm/AddEditRouterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Routers/AddEditRouterForm/AddEditRouterForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Routers/AddEditRouterForm/AddEditRouterForm.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Routers/TableRouters/TableRouters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Routers/TableRouters/TableRouters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Routers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Routers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/SendCommandForm/SendCommandForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/SendCommandForm/SendCommandForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Sites/AddEditSiteForm/AddEditSiteForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Sites/AddEditSiteForm/AddEditSiteForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Sites/TableSites/TableSites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Sites/TableSites/TableSites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/Switches/TableSwitches/TableSwitches.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Switches/TableSwitches/TableSwitches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/ModalBasic/ModalBasic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Common/ModalBasic/ModalBasic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/usePing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/usePing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useSite.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Routers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Sites.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Sites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Admin/Switches.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Admin/Switches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/tools/filter_plugins/cdpneighbors.textfsm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/tools/filter_plugins/macaddress.textfsm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/tools/mac_address_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/tools/mac_address_tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/tools/netmiko_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/tools/netmiko_tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/tools/other.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/tools/other.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/views/DeviceConnectionView.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/views/DeviceConnectionView.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/views/DeviceSendCommandView.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/views/DeviceSendCommandView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/views/MacAddressSearchView.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/views/MacAddressSearchView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/network_api/views/PingView.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/network_api/views/PingView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../icart_backend/users/viewsets/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../icart_backend/users/viewsets/viewsets.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,31 +65,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.TableRouters.js.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/wuich/OneDrive/Escritorio/TTM_Mexicowebsite/iCard-FrontEnd",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\WebStorm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.TableRouters.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/wuich/OneDrive/Escritorio/TTM_Mexicowebsite/iCard-FrontEnd/src/components/CommandSendedFormat&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\WebStorm 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\TTM_Mexicowebsite\iCard-FrontEnd\src\components\CommandSendedFormat" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\SendCommandForm" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Users\TableUsers" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Switches" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Switches\TableSwitches" />
-      <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Routers\TableRouters" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wuich\OneDrive\Escritorio\TTM_Mexicowebsite\iCard-FrontEnd\src\components\Admin" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\components\Admin\Switches" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\pages\Admin" />
       <recent name="C:\Users\wuich\OneDrive\Escritorio\iCard-FrontEnd\src\pages\Admin\Switches" />
@@ -82,6 +111,9 @@
       <workItem from="1710915240295" duration="5913000" />
       <workItem from="1710979510383" duration="6640000" />
       <workItem from="1711119369965" duration="6004000" />
+      <workItem from="1712198093024" duration="20016000" />
+      <workItem from="1712706937172" duration="56000" />
+      <workItem from="1712759497749" duration="4374000" />
     </task>
     <servers />
   </component>
@@ -95,6 +127,11 @@
           <url>file://$PROJECT_DIR$/src/components/Admin/Users/AddEditUserForm/AddEditUserForm.js</url>
           <line>83</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/api/connections.js</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

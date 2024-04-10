@@ -18,7 +18,7 @@ export function AddEditSiteForm(props) {
     const adminDropdown = users?.map((user) => ({
         key: user.id,
         text: user.email,
-        value: user.email
+        value: user.id
     })) || [];
 
     const formik = useFormik({
@@ -61,13 +61,6 @@ export function AddEditSiteForm(props) {
                 onChange={formik.handleChange}
                 error={formik.errors.city}
             />
-            <Form.Input
-                name={"country"}
-                placeholder={"Country"}
-                value={formik.values.country}
-                onChange={formik.handleChange}
-                error={formik.errors.country}
-            />
             <Dropdown
                 placeholder='Administrator'
                 fluid
@@ -89,8 +82,7 @@ function InitialValues(site) {
         site_name: site?.site_name || "",
         region: site?.region || "",
         city: site?.city || "",
-        country: site?.country || "",
-        administrator: site.administrator?.email || ""
+        administrator: site?.administrator || ""
     };
 }
 
@@ -99,8 +91,7 @@ function newValidationSchema() {
         site_name: Yup.string().required(true),
         region: Yup.string(),
         city: Yup.string(),
-        country: Yup.string(),
-        administrator: Yup.string().required(false),
+        administrator: Yup.number().required(false)
     }
 }
 
@@ -109,8 +100,7 @@ function updateSchema() {
         site_name: Yup.string().required(true),
         region: Yup.string(),
         city: Yup.string(),
-        country: Yup.string(),
-        administrator: Yup.string().required(false),
+        administrator: Yup.number().required(false)
     }
 }
 

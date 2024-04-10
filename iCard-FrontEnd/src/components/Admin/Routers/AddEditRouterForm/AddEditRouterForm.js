@@ -85,6 +85,7 @@ export function AddEditRouterForm(props) {
                 value={formik.values.site}
                 onChange={(e, { value }) => formik.setFieldValue('site', value)}
                 error={!!formik.errors.site}
+                className="custom-dropdown" // Add custom class for styling
             />
             <Button type={"submit"} content={nd_router ? "Update":"Create"} primary fluid/>
         </Form>

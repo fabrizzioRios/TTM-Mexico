@@ -2,7 +2,7 @@ import {BASE_API} from "../utils/constants";
 
 export async function getSitesApi(token) {
     try {
-        const url = `${BASE_API}/network_api/network_site`;
+        const url = `${BASE_API}/network_api/network_site/`;
         const params = {
             headers: {
                 Authorization: `Bearer ${token}`

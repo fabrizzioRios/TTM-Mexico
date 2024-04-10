@@ -1,14 +1,14 @@
 from rest_framework import serializers
 from rest_framework.fields import SerializerMethodField
-from rest_framework.relations import PrimaryKeyRelatedField, HyperlinkedRelatedField, SlugRelatedField
 
+from users.models import User
 from users.serializers import UserSerializer
 from .models import Switch, Router, NetworkSite
 from rest_framework.serializers import ModelSerializer
 
 
 class NetworkSiteSerializer(ModelSerializer):
-    administrator = UserSerializer(many=False, read_only=True)
+    administrator = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
     devices = SerializerMethodField(source='get_devices')
 
     class Meta:

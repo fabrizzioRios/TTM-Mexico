@@ -9,12 +9,14 @@ import {
     retrieveSiteApi,
     updateSiteApi
 } from "../api/sites";
+import {retriveAllDevicesApi} from "../api/connections";
 
 export function useSite() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [sites, setSites] = useState(null);
     const [site, setRetrieved] = useState(null);
+    const [devices, setAllDevices] = useState(null);
     const {auth} = useAuth();
     const getMe = async (token) => {
         try {
@@ -75,15 +77,28 @@ export function useSite() {
             setError(error)
         }
     }
+    const retrieveAllDevices = async () => {
+        try {
+            setLoading(true);
+            const response = await retriveAllDevicesApi(auth.token)
+            setLoading(false)
+            setAllDevices(response)
+        } catch (error){
+            setLoading(false);
+            setError(error)
+        }
+    }
 
     return {
         loading,
         error,
         site,
         sites,
+        devices,
         getMe,
         getSites,
         retrieveSite,
+        retrieveAllDevices,
         addSite,
         updateSite,
         deleteSite

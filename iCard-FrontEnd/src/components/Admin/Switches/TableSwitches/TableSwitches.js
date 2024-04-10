@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Table, Button, Icon} from "semantic-ui-react";
 import './TableSwitches.scss';
-import { map } from "lodash";
 import {runPingApi, sshConnectDeviceApi} from "../../../../api/connections";
 import {useSite} from "../../../../hooks";
 
 export function TableSwitches(props) {
-    const { switches, updateSwitch, onDeleteSwitch, sendCommand } = props
+    const { switches, updateSwitch, onDeleteSwitch, sendCommand, configFromFile } = props
     const { sites, getSites } = useSite();
     useEffect(() => {
         getSites()
     }, []);
-    console.log(sites)
     const getSiteById = (id) => {
         if (!sites || typeof sites !== 'object') {
             return null;
@@ -55,7 +53,7 @@ export function TableSwitches(props) {
                             <Table.Cell>{nd_switch.vtp_domain_name}</Table.Cell>
                             <Table.Cell>{filteredSite ? filteredSite : 'Site not found'}</Table.Cell>
                             <Table.Cell>
-                                <Actions netd_switch={nd_switch} updateSwitch={updateSwitch} onDeleteSwitch={onDeleteSwitch} sendCommand={sendCommand}/>
+                                <Actions netd_switch={nd_switch} updateSwitch={updateSwitch} onDeleteSwitch={onDeleteSwitch} sendCommand={sendCommand} configFromFile={configFromFile}/>
                             </Table.Cell>
                         </Table.Row>
                     );
@@ -66,7 +64,7 @@ export function TableSwitches(props) {
 }
 
 function Actions(props) {
-    const { netd_switch, updateSwitch, onDeleteSwitch, sendCommand } = props
+    const { netd_switch, updateSwitch, onDeleteSwitch, sendCommand, configFromFile } = props
     const [isLoadingPing, seIsLoadingPing] = useState(false);
     const [isLoadingSSH, setIsLoadingSSH] = useState(false);
     const [resultPing, setResultPing] = useState(null);
@@ -118,6 +116,9 @@ function Actions(props) {
                 </Button>
                 <Button icon onClick={() => sendCommand(netd_switch)}>
                     <Icon name="mail"/>
+                </Button>
+                <Button icon onClick={() => configFromFile(netd_switch)}>
+                    <Icon name="box"/>
                 </Button>
             </Table.Cell>
             {showPingResult && (

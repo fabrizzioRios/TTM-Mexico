@@ -8,4 +8,4 @@ class PingView(APIView):
         if Tool.check_ping(request.data):
             return Response({'ping_status': 'completed', 'value': True})
         else:
-            return Response({'unreachable': 'not_completed', 'value': False})
+            return Response({'ping_status': 'not_completed', 'value': False})

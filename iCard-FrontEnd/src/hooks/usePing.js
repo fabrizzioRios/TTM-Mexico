@@ -8,10 +8,10 @@ export function usePing() {
     const [ping, setPing] = useState(null);
     const {auth} = useAuth();
 
-    const getPing = async () => {
+    const getPing = async (data) => {
         try {
             setLoading(true)
-            const response = await runPingApi(auth.token)
+            const response = await runPingApi(auth.token, data)
             setLoading(false)
             setPing(response)
         } catch (error) {

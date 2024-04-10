@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import {HeaderPage, TableRouters, AddEditRouterForm} from "../../components/Admin";
+import {HeaderPage, TableRouters, AddEditRouterForm, CommandSendedFormat} from "../../components/Admin";
 import {Loader} from "semantic-ui-react";
 import {useRouter} from "../../hooks";
 import {ModalBasic} from "../../components/Common";
 import {SendCommandForm} from "../../components/Admin";
+import {SendCommandFromFile} from "../../components/Admin/SendCommandFromFile/SendCommandFromFile";
 
 
 export function Routers() {
@@ -45,6 +46,26 @@ export function Routers() {
         openCloseModal()
     }
 
+    const commandSended = (data) => {
+        setTitleModal("Result of commands")
+        setContentModal(<CommandSendedFormat
+            onClose={openCloseModal}
+            onRefetch={onRefetch}
+            nd_switch={data}/>)
+        openCloseModal()
+    }
+
+    const configFromFile = (data) => {
+        setTitleModal("Send command from file")
+        setContentModal(<SendCommandFromFile
+            onClose={openCloseModal}
+            onRefetch={onRefetch}
+            commandSended={commandSended}
+            nd_switch={data}/>)
+        openCloseModal()
+    }
+
+
     const onDeleteRouter = async (data) => {
         const result = window.confirm(`Delete router ${data.hostname}?`)
         if (result){
@@ -64,7 +85,7 @@ export function Routers() {
                     Loading...
                 </Loader>
             ):(
-                <TableRouters routers={routers} updateRouter={updateRouter} onDeleteRouter={onDeleteRouter} sendCommand={sendCommand}/>
+                <TableRouters routers={routers} updateRouter={updateRouter} onDeleteRouter={onDeleteRouter} sendCommand={sendCommand} configFromFile={configFromFile} commandSended={commandSended}/>
             )}
             <ModalBasic
                 show={showModal}

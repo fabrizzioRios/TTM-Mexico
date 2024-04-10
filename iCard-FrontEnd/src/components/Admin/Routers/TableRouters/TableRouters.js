@@ -4,8 +4,7 @@ import './TableRouters.scss';
 import {runPingApi, sshConnectDeviceApi } from "../../../../api/connections";
 import {useSite} from "../../../../hooks";
 export function TableRouters(props) {
-    const { routers, updateRouter, onDeleteRouter, sendCommand } = props
-    console.log(routers)
+    const { routers, updateRouter, onDeleteRouter, sendCommand, configFromFile, commandSended } = props
     const { sites, getSites } = useSite();
     useEffect(() => {
         getSites()
@@ -51,7 +50,7 @@ export function TableRouters(props) {
                             <Table.Cell>{nd_router.domain_ssh}</Table.Cell>
                             <Table.Cell>{filteredSite ? filteredSite : 'Site not found'}</Table.Cell>
                             <Table.Cell>
-                                <Actions router={nd_router} updateRouter={updateRouter} onDeleteRouter={onDeleteRouter} sendCommand={sendCommand}/>
+                                <Actions router={nd_router} updateRouter={updateRouter} onDeleteRouter={onDeleteRouter} sendCommand={sendCommand} configFromFile={configFromFile}/>
                             </Table.Cell>
                         </Table.Row>
                     );
@@ -62,11 +61,12 @@ export function TableRouters(props) {
 }
 
 function Actions(props) {
-    const { router, updateRouter, onDeleteRouter, sendCommand } = props
+    const { router, updateRouter, onDeleteRouter, sendCommand, configFromFile, commandSended} = props
     const [isLoadingPing, seIsLoadingPing] = useState(false);
     const [isLoadingSSH, setIsLoadingSSH] = useState(false);
     const [resultPing, setResultPing] = useState(null);
     const [resultSSH, setResultSSH] = useState(null);
+    const [showPingResult, setShowPingResult] = useState(false); // State to control the visibility of ping result row
 
     const handlePingClick = async () => {
         try {
@@ -74,6 +74,7 @@ function Actions(props) {
             const result = await runPingApi(router.ip_address);
             console.log(result)
             setResultPing(result.value);
+            setShowPingResult(true); // Show ping result row after ping action is executed
         } catch (error) {
             console.error('Error:', error);
             setResultPing(false);
@@ -95,23 +96,35 @@ function Actions(props) {
         }
     };
     return(
-        <Table.Cell textAlign={"right"}>
-            <Button icon onClick={() => updateRouter(router)}>
-                <Icon name={"pencil"}/>
-            </Button>
-            <Button icon negative onClick={() => onDeleteRouter(router)}>
-                <Icon name={"close"}/>
-            </Button>
-            <Button icon loading={isLoadingPing} onClick={handlePingClick}>
-                <Icon name="play" color={resultPing !== null ? (resultPing ? "green" : "red") : "grey"} />
-            </Button>
-            <Button icon loading={isLoadingSSH} onClick={() => handleSSHClick(router)}>
-                <Icon name="rss" color={resultSSH !== null ? (resultSSH ? "green" : "red") : "grey"} />
-            </Button>
-            <Button icon onClick={() => sendCommand(router)}>
-                <Icon name="mail"/>
-            </Button>
-        </Table.Cell>
+        <>
+            <Table.Cell textAlign={"right"}>
+                <Button icon onClick={() => updateRouter(router)}>
+                    <Icon name={"pencil"}/>
+                </Button>
+                <Button icon negative onClick={() => onDeleteRouter(router)}>
+                    <Icon name={"close"}/>
+                </Button>
+                <Button icon loading={isLoadingPing} onClick={handlePingClick}>
+                    <Icon name="play" color={resultPing !== null ? (resultPing ? "green" : "red") : "grey"} />
+                </Button>
+                <Button icon loading={isLoadingSSH} onClick={() => handleSSHClick(router)}>
+                    <Icon name="rss" color={resultSSH !== null ? (resultSSH ? "green" : "red") : "grey"} />
+                </Button>
+                <Button icon onClick={() => sendCommand(router)}>
+                    <Icon name="mail"/>
+                </Button>
+                <Button icon onClick={() => configFromFile(router)}>
+                    <Icon name="box"/>
+                </Button>
+            </Table.Cell>
+            {showPingResult && (
+                <Table.Row>
+                    <Table.Cell colSpan={8}>
+                        Device {resultPing !== null ? (resultPing ? "reachable" : "unreachable") : "unknown"}
+                    </Table.Cell>
+                </Table.Row>
+            )}
+        </>
     )
 }
 

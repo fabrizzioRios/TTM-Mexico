@@ -1,3 +1,4 @@
+
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from network_api.tools.netmiko_tools import DeviceTools
@@ -6,24 +7,19 @@ import json
 
 class DeviceSendCommandView(APIView):
     def post(self, request):
-        print(request.data)
         device_data_str = request.data.get('device_data')
-        print(device_data_str)
         command = request.data.get('writed_command')
         device_data = json.loads(device_data_str)
         connection_dictionary = DeviceTools.create_device_dictionary_from_request(device_data)
-        print(connection_dictionary)
-        if request.data.get('enable_mode'):
-            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
-            return Response(DeviceTools.send_command_privilege_mode(ssh_device_connection, command))
-        if request.data.get('conf_mode'):
-            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
-            return Response(DeviceTools.send_command_config_mode(ssh_device_connection, command))
-        if request.data.get('from_file'):
-            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
-            config_file = request.FILES['file'].read().decode('utf-8')
-            print(config_file)
-            return Response(DeviceTools.send_command_from_file(ssh_device_connection, config_file))
+        if request.data.get('enable_mode') and not request.data.get('conf_mode'):
+            result = DeviceTools.send_command_privilege_mode(connection_dictionary, command)
+            print(result)
+            return Response(result)
+        elif not request.data.get('enable_mode') and request.data.get('conf_mode'):
+            result = DeviceTools.send_command_config_mode(connection_dictionary, command)
+            print(result)
+            return Response(result)
         else:
-            ssh_device_connection = DeviceTools.device_connection(connection_dictionary)
-            return Response(DeviceTools.send_command_access_mode(ssh_device_connection, command))
+            result = DeviceTools.send_command_access_mode(connection_dictionary, command)
+            print(result)
+            return Response(result)

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import {AddEditSiteForm, AddEditSwitchForm, HeaderPage, TableSites} from "../../components/Admin";
+import {AddEditSiteForm, HeaderPage, TableSites} from "../../components/Admin";
 import {Loader} from "semantic-ui-react";
 import {useSite} from "../../hooks";
 import {ModalBasic} from "../../components/Common";
 
 export function Sites() {
-    const { loading, sites, getSites, deleteSite } = useSite()
+    const { loading, sites, devices, getSites,deleteSite, retrieveAllDevices } = useSite()
 
     const [showModal, setShowModal] = useState(false)
     const [titleModal, setTitleModal] = useState(null)
@@ -15,6 +15,7 @@ export function Sites() {
 
     useEffect(() => {
         getSites()
+        retrieveAllDevices()
     }, [refetch])
 
     const openCloseModal = () => setShowModal((prev) => !prev)
@@ -34,6 +35,7 @@ export function Sites() {
             site={data}/>)
         openCloseModal()
     }
+
     const onDeleteSite = async (data) => {
         const result = window.confirm(`Delete site ${data.site_name}?`)
         if (result){
@@ -53,7 +55,7 @@ export function Sites() {
                     Loading...
                 </Loader>
             ):(
-                <TableSites sites={sites} updateSite={updateSite} onDeleteSite={onDeleteSite}/>
+                <TableSites sites={sites} updateSite={updateSite} onDeleteSite={onDeleteSite} devices={devices}/>
             )}
             <ModalBasic
                 show={showModal}

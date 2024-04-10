@@ -3,13 +3,24 @@ from netmiko import ConnectHandler
 
 class DeviceTools:
     @classmethod
+    def create_device_dictionary_from_queryset_with_hostname(cls, request_data) -> dict:
+        return {
+            "hostname": request_data.hostname,
+            "device_type": request_data.device_type,
+            "ip": request_data.ip_address,
+            "username": 'admin',
+            "password": "cisco",
+            "secret": "cisco"
+        }
+
+    @classmethod
     def create_device_dictionary_from_queryset(cls, request_data) -> dict:
         return {
             "device_type": request_data.device_type,
             "host": request_data.ip_address,
-            "username": request_data.username,
-            "password": "test_network",
-            "secret": "test_network"
+            "username": 'admin',
+            "password": "cisco",
+            "secret": "cisco"
         }
 
     @classmethod
@@ -17,26 +28,35 @@ class DeviceTools:
         return {
             "device_type": request_data.get('device_type'),
             "host": request_data.get('ip_address'),
-            "username": request_data.get('username'),
-            "password": "test_network",
-            "secret": "test_network"
+            "username": 'admin',
+            "password": "cisco",
+            "secret": "cisco"
         }
 
     @classmethod
     def device_connection(cls, device_data: dict):
+        return ConnectHandler(**device_data)
+
+    @classmethod
+    def test_device_connection(cls, device_data: dict):
         try:
-            return ConnectHandler(**device_data)
-        except Exception as error:
+            if ConnectHandler(**device_data):
+                return {
+                    "device_connection": "Established",
+                    "connection": True,
+                }
+        except Exception as err:
             return {
-                "device_connection": "Error",
+                "device_connection": "Non-established",
                 "connection": False
             }
 
     @classmethod
-    def send_command_access_mode(cls, device_network_connection, command: str) -> dict:
+    def send_command_access_mode(cls, device_data, command: str) -> dict:
         try:
-            command_result = device_network_connection.send_command(command)
-            device_network_connection.disconnect()
+            connection = ConnectHandler(**device_data)
+            command_result = connection.send_command(command)
+            connection.disconnect()
 
             if command_result:
                 return {
@@ -62,12 +82,41 @@ class DeviceTools:
             }
 
     @classmethod
-    def send_command_privilege_mode(cls, device_network_connection, command: str) -> dict:
+    def send_command_privilege_mode(cls, device_data, command) -> dict:
         try:
-            enable_mode = device_network_connection.enable()
+            connection = ConnectHandler(**device_data)
+            enable_mode = connection.enable()
             command_result = enable_mode.send_command(command)
-            enable_mode.exit_enable_mode()
-            device_network_connection.disconnect()
+            connection.disconnect()
+            if command_result:
+                return {
+                    "status": "successful",
+                    "command_sended": command,
+                    "prompt_result": command_result,
+                    "action": True
+                }
+            else:
+                return {
+                    "status": "un-successful",
+                    "command_sended": command,
+                    "prompt_result": command_result,
+                    "action": False
+                }
+
+        except Exception as error:
+            return {
+                "status": "error",
+                "command_sended": command,
+                "prompt_result": "error",
+                "action": False
+            }
+
+    @classmethod
+    def send_command_config_mode(cls, device, command) -> dict:
+        try:
+            device_connection = ConnectHandler(**device)
+            command_result = device_connection.send_config_set([command])
+            device_connection.disconnect()
 
             if command_result:
                 return {
@@ -93,24 +142,22 @@ class DeviceTools:
             }
 
     @classmethod
-    def send_command_config_mode(cls, device_network_connection, command) -> dict:
+    def send_command_from_file(cls, device, config_archive) -> dict:
         try:
-            enable_mode = device_network_connection.enable()
-            command_result = enable_mode.send_config_set([command])
-
-            device_network_connection.disconnect()
-
+            device_connection = ConnectHandler(**device)
+            command_result = device_connection.send_config_from_file(config_archive)
+            device_connection.disconnect()
             if command_result:
                 return {
                     "status": "successful",
-                    "command_sended": command,
+                    "command_sended": config_archive,
                     "prompt_result": command_result,
                     "action": True
                 }
             else:
                 return {
                     "status": "un-successful",
-                    "command_sended": command,
+                    "command_sended": config_archive,
                     "prompt_result": command_result,
                     "action": False
                 }
@@ -118,35 +165,7 @@ class DeviceTools:
         except Exception as error:
             return {
                 "status": "error",
-                "command_sended": command,
-                "prompt_result": "error",
-                "action": False
-            }
-
-    @classmethod
-    def send_command_from_file(cls, device_network_connection, file) -> dict:
-        try:
-            command_result = device_network_connection.send_config_from_file(file)
-            device_network_connection.disconnect()
-            if command_result:
-                return {
-                    "status": "successful",
-                    "command_sended": file,
-                    "prompt_result": command_result,
-                    "action": True
-                }
-            else:
-                return {
-                    "status": "un-successful",
-                    "command_sended": file,
-                    "prompt_result": command_result,
-                    "action": False
-                }
-
-        except Exception as error:
-            return {
-                "status": "error",
-                "command_sended": file,
+                "command_sended": config_archive,
                 "prompt_result": "error",
                 "action": False
             }

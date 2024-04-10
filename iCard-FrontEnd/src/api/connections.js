@@ -51,6 +51,21 @@ export async function sendCommandDeviceApi(data) {
     }
 }
 
+export async function sendCommandFileDeviceApi(data) {
+    try {
+        const url = `${BASE_API}/network_api/send-command-file/`;
+        const params = {
+            method: "POST",
+            body: data
+        };
+
+        const response = await fetch(url, params);
+        return await response.json();
+    } catch (error) {
+        throw error;
+    }
+}
+
 export async function searchMacAddressApi(data) {
     try {
         const url = `${BASE_API}/network_api/search-mac/`;
@@ -68,3 +83,21 @@ export async function searchMacAddressApi(data) {
         throw error
     }
 }
+
+export async function retriveAllDevicesApi() {
+    try {
+        const url = `${BASE_API}/network_api/devices-site/`;
+        const params = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        };
+
+        const response = await fetch(url, params)
+        return await response.json()
+    } catch (error) {
+        throw error
+    }
+}
+
